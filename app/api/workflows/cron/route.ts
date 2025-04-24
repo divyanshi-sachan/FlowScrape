@@ -2,6 +2,8 @@ import { getAppUrl } from "@/lib/helper/url";
 import prisma from "@/lib/prisma";
 import { WorkflowStatus } from "@/types/workflow";
 export async function GET(req: Request) {
+  
+    const isBuild = process.env.NEXT_BUILD === "true";
     const now = new Date();
     const workflows = await prisma.workflow.findMany({
         select: { id: true },
@@ -11,8 +13,10 @@ export async function GET(req: Request) {
             nextRunAt: { lte: now },
         }
     });
-    for(const workflow of workflows){
+    if (!isBuild) {
+      for (const workflow of workflows) {
         triggerWorkflow(workflow.id);
+      }
     }
     return Response.json({workflowsToRun:workflows.length},{status:200});
 }

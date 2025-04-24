@@ -25,7 +25,7 @@ export default function CreditsPurchase(){
                         <div key={pack.id} className="flex items-center pace-x-3 bg-secondary/50 rounded-lg p-3 hover:;bg-secondary" onClick={()=> setSelectedPack(pack.id)}>
                             <RadioGroupItem value={pack.id} id={pack.id}/>
                             <Label className="flex justify-between w-full cursor-pointer">
-                                <span className="font-medium">
+                                <span className="font-medium ml-10">
                                     {pack.name} - {pack.label}
                                 </span>
                                 <span className="font-bold text-primary">${(pack.price/100).toFixed(2)}</span>
