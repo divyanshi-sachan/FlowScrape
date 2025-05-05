@@ -1,3 +1,4 @@
+"use client"
 import { GetPeriods } from '@/actions/analytics/getPeriods';
 import React, { Suspense } from 'react'
 import PeriodSelector from './_components/PeriodSelector';
