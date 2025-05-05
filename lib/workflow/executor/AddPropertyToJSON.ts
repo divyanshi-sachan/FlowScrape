@@ -1,6 +1,4 @@
 import {  ExecutionEnvironment } from "@/types/executor";
-import { ClickElementTask } from "../task/ClickElement";
-import { ReadPropertyFromJSONTask } from "../task/ReadPropertyFromJson";
 import { AddPropertyToJSONTask } from "../task/AddPropertyToJSON";
 export async function AddPropertyToJSONExecutor(environment:ExecutionEnvironment<typeof  AddPropertyToJSONTask>):Promise<boolean>{
     try{
