@@ -26,20 +26,20 @@ function HomePage({searchParams,
     <div className='flex flex-1 flex-col h-full px-6'>
       <div className='flex justify-between mb-8'>
         <h1 className='text-3xl font-bold'>Home</h1>
-        <Suspense fallback={<Skeleton className='w-[180px] h-[40px]'/>} >
+        {/* <Suspense fallback={<Skeleton className='w-[180px] h-[40px]'/>} > */}
             <PeriodSelectorWrapper selectedPeriod={period} />
-        </Suspense>
+        {/* </Suspense> */}
       </div>
       <div className='h-full py-6 flex flex-col gap-4 '>
-        <Suspense fallback={<StatsCardSkeleton/>}>
+        {/* <Suspense fallback={<StatsCardSkeleton/>}> */}
         <StatsCards selectedPeriod={period}/>
-        </Suspense>
-        <Suspense fallback={<Skeleton className='w-full h-[300px]'/>}>
+        {/* </Suspense> */}
+        {/* <Suspense fallback={<Skeleton className='w-full h-[300px]'/>}> */}
         <StatsExecutionStatus selectedPeriod={period}/>
-        </Suspense>
-        <Suspense fallback={<Skeleton className='w-full h-[300px]'/>}>
+        {/* </Suspense> */}
+        {/* <Suspense fallback={<Skeleton className='w-full h-[300px]'/>}> */}
         <CreditsUsageInPeriod selectedPeriod={period}/>
-        </Suspense>
+        {/* </Suspense> */}
 
       </div>
     </div>
